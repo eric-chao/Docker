@@ -6,7 +6,7 @@ RUN echo 'https://mirrors.aliyun.com/alpine/v3.7/main/' > /etc/apk/repositories 
     && echo 'https://mirrors.aliyun.com/alpine/v3.7/community/' >> /etc/apk/repositories \
     && apk update \
     && apk add tzdata \
-    && apk add --no-cache bash \
+    && apk add bash \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo 'Asia/Shanghai' > /etc/timezone \
     && apk del tzdata
