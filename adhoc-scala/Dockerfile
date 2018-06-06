@@ -1,4 +1,6 @@
-FROM anapsix/alpine-java:8_jdk-dcevm
+#FROM anapsix/alpine-java:8_jdk-dcevm
+
+FROM adoptopenjdk/openjdk8-openj9:alpine
 
 MAINTAINER ZXJ
 
