@@ -1,7 +1,7 @@
 ### Configuration
 
 * [Predixy](https://github.com/joyieldInc/predixy "predixy") Configuration
-    <pre><code><font face="黑体">Please update redis-predixy-cfg.yaml for you personal config.</font></code></pre>
+    <pre><code><font face="黑体">Please update redis-predixy-cfg.yaml for your personal config.</font></code></pre>
 
 ### Benchmark
 
