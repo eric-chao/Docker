@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: adhoc-redis-predixy-cfg
+  name: redis-predixy-cfg
   namespace: default
 data:
   predixy.conf: |
@@ -9,7 +9,7 @@ data:
     Bind 0.0.0.0:7617
     WorkerThreads 16
     BufSize 8192
-    Log /storage/logs/adhoc-predixy.log
+    Log /storage/logs/predixy.log
     LogRotate 1d
     AllowMissLog true
     LogVerbSample 0

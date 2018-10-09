@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="zxj <zhaoxiaojun@appadhoc.com>"
+LABEL maintainer="zxj <210xiaojun@163.com>"
 
 ENV VERSION 1.0.5
 

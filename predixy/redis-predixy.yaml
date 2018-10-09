@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: adhoc-redis-predixy
+  name: redis-predixy
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: adhoc-redis-predixy
+        app: redis-predixy
     spec:
       imagePullSecrets:
-      - name: adhoc-docker-registry
+      - name: docker-registry
       containers:
-      - name: adhoc-redis-predixy
-        image: registry.appadhoc.com:30443/adhoc-redis-predixy:chinamobile
+      - name: redis-predixy
+        image: registry.appadhoc.com:30443/redis-predixy:chinamobile
         imagePullPolicy: IfNotPresent
 #        command: ["/usr/local/bin/predixy"]
 #        args: ["-l","/tmp/$(POD_NAME).log","-c"]
@@ -26,27 +26,27 @@ spec:
             memory: 0.1Gi
         volumeMounts:
         - mountPath: /storage/logs
-          name: adhoc-redis-predixy-logs
+          name: redis-predixy-logs
         - mountPath: /etc/predixy/conf
-          name: adhoc-redis-predixy-cfg
+          name: redis-predixy-cfg
       volumes:
-      - name: adhoc-redis-predixy-logs
+      - name: redis-predixy-logs
         hostPath:
-          path: /data/adhoc-redis-predixy/logs
-      - name: adhoc-redis-predixy-cfg
+          path: /data/redis-predixy/logs
+      - name: redis-predixy-cfg
         configMap:
-          name: adhoc-redis-predixy-cfg
+          name: redis-predixy-cfg
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: adhoc-predixy
-  name: adhoc-predixy
+    app: predixy
+  name: predixy
 spec:
   ports:
   - name: proxy
     port: 6379
     targetPort: 7617
   selector:
-    app: adhoc-redis-predixy
+    app: redis-predixy
