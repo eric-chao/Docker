@@ -3,8 +3,8 @@
 * [Predixy](https://github.com/joyieldInc/predixy "predixy") Configuration
     <pre><code><font face="黑体">
     Please update redis-predixy-cfg.yaml for your personal config.
-    More details, please see [predix official doc](https://github.com/joyieldInc/predixy "predixy")
-    </font></code></pre>
+    More details, please see
+    </font></code></pre>[predix official doc](https://github.com/joyieldInc/predixy "predixy")
 
 ### Benchmark
 
